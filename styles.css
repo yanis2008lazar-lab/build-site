@@ -977,6 +977,11 @@ svg{ display: block; }
   color: var(--grey-500);
   letter-spacing: .04em;
 }
+.tier-tax-note{
+  margin-top: .35rem;
+  font-size: .78rem;
+  color: var(--grey-600);
+}
 .tier-features{
   margin-top: 1.5rem;
   padding-top: 1.3rem;

@@ -100,45 +100,4 @@
   /* ---------- Footer year ---------- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  /* ---------- Lemon Squeezy checkout: load only on first buy-button click ---------- */
-  var lemonLoaded = false;
-  var lemonLoading = false;
-
-  function openLemonCheckout(url) {
-    if (window.LemonSqueezy && window.LemonSqueezy.Url) {
-      window.LemonSqueezy.Url.Open(url);
-    }
-  }
-
-  function loadLemonScript(onReady) {
-    if (lemonLoaded) { onReady(); return; }
-    if (lemonLoading) {
-      var wait = setInterval(function () {
-        if (lemonLoaded) { clearInterval(wait); onReady(); }
-      }, 50);
-      return;
-    }
-    lemonLoading = true;
-    var script = document.createElement("script");
-    script.src = "https://app.lemonsqueezy.com/js/lemon.js";
-    script.onload = function () {
-      lemonLoaded = true;
-      if (typeof window.createLemonSqueezy === "function") {
-        window.createLemonSqueezy();
-      }
-      onReady();
-    };
-    document.body.appendChild(script);
-  }
-
-  document.querySelectorAll(".lemonsqueezy-button").forEach(function (btn) {
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      var href = btn.href;
-      loadLemonScript(function () {
-        openLemonCheckout(href);
-      });
-    });
-  });
 })();

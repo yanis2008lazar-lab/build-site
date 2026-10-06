@@ -590,6 +590,44 @@ svg{ display: block; }
   font-family: var(--font-display);
   font-style: italic;
 }
+.ideas-closing{
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  color: var(--grey-300);
+  max-width: 42rem;
+}
+
+/* ---------- Preview reveal (real book page previews) ---------- */
+.preview-reveal{ margin-top: .9rem; }
+.preview-reveal summary{
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: .4em;
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  transition: color var(--dur) var(--ease);
+}
+.preview-reveal summary::-webkit-details-marker{ display: none; }
+.preview-reveal summary:hover{ color: var(--gold); }
+.preview-reveal summary span{ transition: transform .3s var(--ease); display: inline-block; }
+.preview-reveal[open] summary span{ transform: translateX(4px); }
+.preview-reveal[open] summary{ margin-bottom: .9rem; }
+.preview-reveal img{
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  animation: fadeIn .4s var(--ease);
+}
 
 /* ---------- Architecture ---------- */
 .architecture{ }

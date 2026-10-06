@@ -1139,6 +1139,18 @@ svg{ display: block; }
 }
 .final-meta .price{ color: var(--gold-light); font-weight: 600; }
 
+/* ---------- Mid-page CTA ---------- */
+.mid-cta-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.mid-cta-row .lede{ margin: 0; }
+.mid-cta-row strong{ color: var(--gold-light); font-style: normal; font-weight: 500; }
+
 /* ---------- Footer ---------- */
 .site-footer{
   border-top: 1px solid var(--line);
